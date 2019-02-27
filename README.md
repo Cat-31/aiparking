@@ -3,13 +3,10 @@
 
 ![检测](snap.png)
   
-  
-  
+
 网络模型  
 
 ![Model](model.png)
-
-
 
 
 <br>
@@ -19,6 +16,11 @@
 ![Train](plot.png)
 
 
-
 参考：
 https://www.pyimagesearch.com/2016/08/01/lenet-convolutional-neural-network-in-python/
+
+
+公众号：
+![barcode](qrcode.png)  
+
+
