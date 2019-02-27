@@ -20,7 +20,8 @@
 https://www.pyimagesearch.com/2016/08/01/lenet-convolutional-neural-network-in-python/
 
 
-公众号：
+公众号：  
+
 ![barcode](qrcode.png)  
 
 
