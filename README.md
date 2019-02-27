@@ -1,5 +1,7 @@
-神经网络在停车厂的应用小Demo，训练时间很短，练手学习用。
+神经网络在停车厂的应用小Demo，训练时间很短，练手学习用。  
 
+训练：train_network.py  
+分类检测：classify.py  
 
 ![检测](snap.png)
   
