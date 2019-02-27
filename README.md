@@ -2,6 +2,7 @@
 
 训练：train_network.py  
 分类检测：classify.py  
+模型下载：https://share.weiyun.com/5TXpJdv
 
 ![检测](snap.png)
   
