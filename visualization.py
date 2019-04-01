@@ -1,10 +1,8 @@
-# import the necessary packages
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model, Model
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
-from scipy import signal
 
 
 def get_output_at_layer(pmodel, layer_name):
