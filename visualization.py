@@ -41,13 +41,13 @@ for i in range(0, 4):
 for layer in model.layers:
     print(layer.name)
 
-conv2d_1 = model.get_layer('conv2d_1')
-x1w = conv2d_1.get_weights()[0][:, :, 0, :]
+conv2d = model.get_layer('conv2d')
+x1w = conv2d.get_weights()[0][:, :, 0, :]
 
 # 显示卷积核心
-print('--', conv2d_1.filters, conv2d_1.kernel_size)
+print('--', conv2d.filters, conv2d.kernel_size)
 
-for i in range(0, conv2d_1.filters):
+for i in range(0, conv2d.filters):
     plt.subplot(5, 5, i + 1)
     plt.subplots_adjust(wspace=1, hspace=1)
     plt.imshow(x1w[:, :, i], interpolation="nearest", cmap="gray")
@@ -57,12 +57,12 @@ plt.colorbar(cax=cax, orientation='horizontal')
 plt.show()
 
 
-conv2d_2 = model.get_layer('conv2d_2')
-x2w = conv2d_2.get_weights()[0][:, :, 0, :]
+conv2d_1 = model.get_layer('conv2d_1')
+x2w = conv2d_1.get_weights()[0][:, :, 0, :]
 
-print(conv2d_2.filters, conv2d_2.kernel_size)
+print(conv2d_1.filters, conv2d_1.kernel_size)
 
-for i in range(0, conv2d_2.filters):
+for i in range(0, conv2d_1.filters):
     plt.subplot(6, 10, i + 1)
     plt.subplots_adjust(wspace=1, hspace=1)
     plt.imshow(x2w[:, :, i], interpolation="nearest", cmap="gray")
@@ -72,28 +72,28 @@ plt.colorbar(cax=cax, orientation='horizontal')
 plt.show()
 
 
+co = get_output_at_layer(model, 'conv2d')
+for i in range(0, conv2d.filters):
+    plt.subplot(5, 4, i + 1)
+    plt.subplots_adjust(wspace=1, hspace=1)
+    plt.imshow(co[0][:, :, i], cmap="gray")
+
+plt.show()
+
+
+co = get_output_at_layer(model, 'activation')
+for i in range(0, conv2d.filters):
+    plt.subplot(5, 4, i + 1)
+    plt.subplots_adjust(wspace=1, hspace=1)
+    plt.imshow(co[0][:, :, i], cmap="gray")
+plt.show()
+
+
+conv2d_1 = model.get_layer('conv2d_1')
+x1w = conv2d_1.get_weights()[0][:, :, 0, :]
 co = get_output_at_layer(model, 'conv2d_1')
+
 for i in range(0, conv2d_1.filters):
-    plt.subplot(5, 4, i + 1)
-    plt.subplots_adjust(wspace=1, hspace=1)
-    plt.imshow(co[0][:, :, i], cmap="gray")
-
-plt.show()
-
-
-co = get_output_at_layer(model, 'activation_1')
-for i in range(0, conv2d_1.filters):
-    plt.subplot(5, 4, i + 1)
-    plt.subplots_adjust(wspace=1, hspace=1)
-    plt.imshow(co[0][:, :, i], cmap="gray")
-plt.show()
-
-
-conv2d_2 = model.get_layer('conv2d_2')
-x1w = conv2d_2.get_weights()[0][:, :, 0, :]
-co = get_output_at_layer(model, 'conv2d_2')
-
-for i in range(0, conv2d_2.filters):
     plt.subplot(10, 5, i + 1)
     plt.subplots_adjust(wspace=1, hspace=1)
     plt.imshow(co[0][:, :, i], cmap="gray")
